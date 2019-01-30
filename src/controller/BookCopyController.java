@@ -35,7 +35,7 @@ public class BookCopyController implements Initializable {
 	public ComboBox<String> cmbBoxISBN;
 
 	public void addBookCopy() {
-		BookCopyBAL copy = new BookCopyBAL();
+	BookCopyBAL copy = new BookCopyBAL();
 		try {
 			RuleSet rules = RuleSetFactory.getRuleSet(BookCopyController.this);
 			rules.applyRules(BookCopyController.this);
