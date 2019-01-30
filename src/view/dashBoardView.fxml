@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootLayout" prefHeight="700.0" prefWidth="1236.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
+	<children>
+		<BorderPane prefHeight="700.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<left>
+				<Accordion fx:id="accord" BorderPane.alignment="CENTER">
+					<panes>
+						<TitledPane fx:id="pane1" animated="false" prefHeight="581.0" prefWidth="202.0" styleClass="primary" text="Settings">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="606.0" prefWidth="312.0">
+									<children>
+										<Hyperlink layoutX="14.0" layoutY="14.0" onAction="#addNewMember" style="-: ;" text="View/Add/Edit LibraryMember" />
+										<Hyperlink fx:id="hp1" layoutX="14.0" layoutY="50.0" onAction="#addBook" prefHeight="29.0" prefWidth="150.0" text="View/Add New Book" />
+										<Hyperlink layoutX="14.0" layoutY="79.0" onAction="#addCopyOfBook" text="View/Add Copy" />
+									</children>
+								</AnchorPane>
+							</content>
+						</TitledPane>
+						<TitledPane fx:id="pane2" animated="false" styleClass="primary" text="Reports">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+							</content>
+						</TitledPane>
+						<TitledPane fx:id="pane3" animated="false" prefHeight="650.0" prefWidth="202.0" styleClass="primary" text="Transaction">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="183.0" style="-fx-border-style: dotted  dashed  dashed  dashed; -fx-border-color: white; -fx-border-width: 2;">
+									<children>
+										<Hyperlink layoutX="14.0" layoutY="8.0" onAction="#checkOutBook" text="Checkout Book" />
+									</children>
+								</AnchorPane>
+							</content>
+						</TitledPane>
+					</panes>
+				</Accordion>
+			</left>
+			<center>
+				<BorderPane fx:id="pane" prefHeight="700.0" prefWidth="1016.0" BorderPane.alignment="CENTER">
+					<top>
+						<AnchorPane prefHeight="42.0" prefWidth="758.0" BorderPane.alignment="CENTER">
+							<children>
+								<Label fx:id="lblWelcomeMsg" layoutX="14.0" layoutY="2.0" text="lblWelcomeMsg">
+									<padding>
+										<Insets bottom="3.0" left="3.0" right="20.0" top="2.0" />
+									</padding>
+									<font>
+										<Font name="System Bold Italic" size="14.0" />
+									</font>
+								</Label>
+								<Button fx:id="btnLogin" layoutX="921.0" layoutY="6.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="109.0" text="Logout">
+									<font>
+										<Font name="System Bold" size="15.0" />
+									</font>
+									<styleClass>
+										<String fx:value="primary" />
+										<String fx:value="btn" />
+									</styleClass>
+								</Button>
+							</children>
+						</AnchorPane>
+					</top>
+				</BorderPane>
+			</center>
+		</BorderPane>
+	</children>
+</AnchorPane>

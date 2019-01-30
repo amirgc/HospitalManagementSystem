@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="loginbox" maxHeight="388.0" maxWidth="404" minHeight="266.0" minWidth="345.0" prefHeight="266.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <Label graphicTextGap="10.0" layoutX="24.0" layoutY="34.0" text="Library Management System">
+         <font>
+            <Font name="Cambria Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textUser" layoutX="24.0" layoutY="93.0" prefHeight="31.0" prefWidth="289.0" promptText="UserName" />
+      <PasswordField fx:id="textPassword" layoutX="24.0" layoutY="139.0" prefHeight="31.0" prefWidth="289.0" promptText="Password" />
+      <Button id="button" blendMode="MULTIPLY" layoutX="24.0" layoutY="184.0" mnemonicParsing="false" onAction="#Login" prefHeight="31.0" prefWidth="143.0" text="Log In" textOverrun="WORD_ELLIPSIS" />
+      <Label fx:id="resultLabel" layoutX="23.0" layoutY="227.0" prefHeight="31.0" prefWidth="289.0" />
+      <Button id="button" blendMode="MULTIPLY" layoutX="173.0" layoutY="184.0" mnemonicParsing="false" onAction="#Login" prefHeight="31.0" prefWidth="143.0" text="Cancel" textOverrun="WORD_ELLIPSIS" />
+   </children>
+</AnchorPane>
