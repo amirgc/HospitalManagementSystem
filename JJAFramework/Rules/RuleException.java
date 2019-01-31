@@ -1,4 +1,4 @@
-package helper;
+package Rules;
 
 @SuppressWarnings("serial")
 final public class RuleException extends Exception {

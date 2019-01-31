@@ -5,13 +5,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dal.Dao;
+import dal.Dao1;
 import entities.Address;
-import dal.DataAccess;
-import dal.DataAccessFactory;
+import dal.DataAccess1;
+import dal.DataAccessFactory1;
 
-public class AddressDAO implements Dao {
-	DataAccess da = DataAccessFactory.getDataAccess();
+public class AddressDAO implements Dao1 {
+	DataAccess1 da = DataAccessFactory1.getDataAccess();
 	private String street;
 	private String city;
 	private String state;

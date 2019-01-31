@@ -1,5 +1,7 @@
 package helper;
 
+import Rules.RuleException;
+import Rules.RuleSet;
 import controller.BookController;
 
 public class BookControllerRuleSet implements RuleSet {

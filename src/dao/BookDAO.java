@@ -5,13 +5,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dal.Dao;
-import dal.DataAccess;
-import dal.DataAccessFactory;
+import dal.Dao1;
+import dal.DataAccess1;
+import dal.DataAccessFactory1;
 import entities.Book;
 
-public class BookDAO implements Dao {
-	DataAccess da = DataAccessFactory.getDataAccess();
+public class BookDAO implements Dao1 {
+	DataAccess1 da = DataAccessFactory1.getDataAccess();
 	public Book book;
 	private ArrayList<Book> books;
 	private String sql;

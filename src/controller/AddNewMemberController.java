@@ -7,11 +7,11 @@ import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
+import Rules.RuleException;
+import Rules.RuleSet;
 import bal.MemberBAL;
 import entities.Book;
 import entities.Member;
-import helper.RuleException;
-import helper.RuleSet;
 import helper.RuleSetFactory;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;

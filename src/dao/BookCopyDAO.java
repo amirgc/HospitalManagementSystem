@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entities.BookCopy;
-import dal.Dao;
-import dal.DataAccess;
-import dal.DataAccessFactory;
+import dal.Dao1;
+import dal.DataAccess1;
+import dal.DataAccessFactory1;
 
-public class BookCopyDAO implements Dao {
-	DataAccess da = DataAccessFactory.getDataAccess();
+public class BookCopyDAO implements Dao1 {
+	DataAccess1 da = DataAccessFactory1.getDataAccess();
 	public BookCopy bkCpy;
 	List<BookCopy> bookCopies;
 	private String sql;

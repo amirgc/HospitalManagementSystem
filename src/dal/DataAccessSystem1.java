@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DataAccessSystem implements DataAccess {
+public class DataAccessSystem1 implements DataAccess1 {
 
-	DataAccessSystem() {
+	DataAccessSystem1() {
 	}
 
-	public void read(Dao dao) throws SQLException {
+	public void read(Dao1 dao) throws SQLException {
 		String query = dao.getSelectSql();
 	
 		Connection con = null;
@@ -32,7 +32,7 @@ public class DataAccessSystem implements DataAccess {
 		}
 	}
 
-	public boolean write(Dao dao)  {
+	public boolean write(Dao1 dao)  {
 		String query = dao.getInsertSql();
 		Connection con = null;
 		try {

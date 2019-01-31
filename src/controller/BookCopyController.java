@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import Rules.RuleException;
+import Rules.RuleSet;
 import bal.BookBAL;
 import bal.BookCopyBAL;
 import entities.Book;
 import entities.BookCopy;
-import helper.RuleException;
-import helper.RuleSet;
 import helper.RuleSetFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -2,6 +2,8 @@ package helper;
 
 import java.awt.Component;
 
+import Rules.RuleException;
+import Rules.RuleSet;
 import controller.AddNewMemberController;
 
 public class AddNewMemberControllerRuleSet implements RuleSet {

@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface Dao {
+public interface Dao1 {
 	public String getSelectSql();
 	public String getInsertSql();
 	public String getUpdateSql();

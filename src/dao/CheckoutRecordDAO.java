@@ -5,17 +5,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dal.Dao;
-import dal.DataAccess;
-import dal.DataAccessFactory;
+import dal.Dao1;
+import dal.DataAccess1;
+import dal.DataAccessFactory1;
 import entities.CheckoutRecord;
 
-public class CheckoutRecordDAO implements Dao {
+public class CheckoutRecordDAO implements Dao1 {
 
 	private String sql;
 	private List<CheckoutRecord> records;
 	public CheckoutRecord record;
-	DataAccess da = DataAccessFactory.getDataAccess();
+	DataAccess1 da = DataAccessFactory1.getDataAccess();
 
 	@Override
 	public String getSelectSql() {

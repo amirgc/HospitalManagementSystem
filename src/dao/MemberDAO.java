@@ -5,19 +5,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dal.Dao;
-import dal.DataAccess;
-import dal.DataAccessFactory;
+import dal.Dao1;
+import dal.DataAccess1;
+import dal.DataAccessFactory1;
 import entities.Address;
 import entities.Member;
 
-public class MemberDAO implements Dao {
+public class MemberDAO implements Dao1 {
 
 	public Member member;
 
 	private List<Member> members;
 	private String sql;
-	DataAccess da = DataAccessFactory.getDataAccess();
+	DataAccess1 da = DataAccessFactory1.getDataAccess();
 
 	public MemberDAO() {
 		member = new Member();

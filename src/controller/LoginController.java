@@ -33,17 +33,17 @@ public class LoginController {
 		String userID = textUser.getText();
 		String password = textPassword.getText();
 		LoginBAL l = new LoginBAL();
-		if (userID.isEmpty() && password.isEmpty()) {
-			resultLabel.setText("Please provide User Id And Password");
-			return;
-		}
-		User user = l.IsAuthentiCated(userID, password);
-		// User user = l.IsAuthentiCated("986677", "test1234");
+//		if (userID.isEmpty() && password.isEmpty()) {
+//			resultLabel.setText("Please provide User Id And Password");
+//			return;
+//		}
+		//User user = l.IsAuthentiCated(userID, password);
+		User user = l.IsAuthentiCated("986677", "test1234");
 		if (user == null) {
 			resultLabel.setText("User Not Found");
 		} else {
 
-			LoggedInDetails.setAuthLevel(user.getRoles());
+			LoggedInDetails.setAuthLevel(user.getAuthLevel());
 			LoggedInDetails.setUserName("Welcome Back " + user.getUserName());
 			loadMainFormPage();
 		}

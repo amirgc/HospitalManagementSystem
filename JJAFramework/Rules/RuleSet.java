@@ -1,6 +1,4 @@
-package helper;
-
-import java.awt.Component;
+package Rules;
 
 public interface RuleSet {
 	public void applyRules(Object ob) throws RuleException;
