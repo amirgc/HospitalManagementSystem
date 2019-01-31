@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="C:/Users/gcami/OneDrive/Desktop/Mum/ASD/Project/HospitalManagementSystem/src/ucanaccess/hsqldb.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gcami/OneDrive/Desktop/Mum/ASD/Project/HospitalManagementSystem/src/ucanaccess/jackcess-2.1.11.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gcami/OneDrive/Desktop/Mum/ASD/Project/HospitalManagementSystem/src/ucanaccess/ucanaccess-4.0.4.jar"/>
+	<classpathentry kind="lib" path="src/ucanaccess/mysql-connector.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

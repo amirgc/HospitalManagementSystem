@@ -15,7 +15,7 @@ public class DataAccessSystem implements DataAccess {
 
 		Connection con = null;
 		try {
-			con = ConnectManager.Connect();
+			con = ConnectManagerFactory.getMySqlConnect();
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			dc.unpackResultSet(rs);
@@ -34,7 +34,7 @@ public class DataAccessSystem implements DataAccess {
 		String query = dc.getSql();
 		Connection con = null;
 		try {
-			con = ConnectManager.Connect();
+			con = ConnectManagerFactory.getMySqlConnect();
 			Statement stmt = con.createStatement();
 			// System.out.println("the query: " + query);
 			stmt.executeUpdate(query);
@@ -56,28 +56,29 @@ public class DataAccessSystem implements DataAccess {
 		}
 	}
 
-	public static class ConnectManager {
-
-		private static Connection connection = null;
-		private static final String DB_URL = "jdbc:ucanaccess://src/MsAccessDb/LibraryManagementSystem.accdb";
-
-		public static Connection Connect() {
-			try {
-
-				Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-			} catch (ClassNotFoundException cnfex) {
-				System.out.println("Problem in loading or " + "registering MS Access JDBC driver");
-				cnfex.printStackTrace();
-			}
-
-			try {
-				connection = DriverManager.getConnection(DB_URL);
-			} catch (SQLException e) {
-
-			}
-			return connection;
-		}
-
-	}
+//	public static class ConnectManager {
+//        ////src/MsAccessDb/LibraryManagementSystem.accdb
+//		private static Connection connection = null;
+//		private static final String DB_URL = "jdbc:ucanaccess:Server=myServerAddress;Port=3306;Database=sql3276627;Uid=sql3276627;Pwd=zQZRhxc9tp;";
+//
+//		public static Connection Connect() {
+//			try {
+//
+//				//Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+//				//Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+//			} catch (ClassNotFoundException cnfex) {
+//				System.out.println("Problem in loading or " + "registering MS Access JDBC driver");
+//				cnfex.printStackTrace();
+//			}
+//
+//			try {
+//				connection = DriverManager.getConnection(DB_URL);
+//			} catch (SQLException e) {
+//
+//			}
+//			return connection;
+//		}
+//
+//	}
 
 }
