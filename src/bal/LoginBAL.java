@@ -1,7 +1,4 @@
 package bal;
-
-import java.util.List;
-
 import dao.UserDAO;
 import entities.User;
 
@@ -11,7 +8,6 @@ public class LoginBAL {
 		{
 			UserDAO usrDao = new UserDAO(new User(userId, "", password, ""));
 			User usr = (User) usrDao.SelectFirstOrDefault();
-
 			if (usr.getUserId() != null) {
 				if (usr.getUserId() != null) {
 					return usr;
@@ -23,8 +19,9 @@ public class LoginBAL {
 		}
 	}
 
-	public void AddUser() {
-//		UserDAO usrDao = new UserDAO("");
-//		usrDao.Add(usrDao);
+	public void AddUser(User user) {
+		// AddUser(new User(userId, "Shyam", password, "DOCTOR"));
+		UserDAO usrDao = new UserDAO(user);
+		usrDao.Add(user);
 	}
 }
