@@ -39,4 +39,7 @@ public class UserQueryBuilder implements QueryBuilder {
 		return query;
 	}
 
+	public static String getSelectQueryByUserNameAndPassword(String UserName, String Password) {
+		return "Select * from Users where userId ='" + UserName + "' and passWord='" + Password + "'";
+	}
 }
