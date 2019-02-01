@@ -1,4 +1,5 @@
 package bal;
+import ORM.EntityFactory;
 import dao.UserDAO;
 import entities.User;
 
@@ -6,7 +7,7 @@ public class LoginBAL {
 
 	public User IsAuthentiCated(String userId, String password) {
 		{
-			UserDAO usrDao = new UserDAO(new User(userId, "", password, ""));
+			UserDAO usrDao = new UserDAO(EntityFactory.createUser(userId, "", password, ""));
 			User usr = (User) usrDao.SelectFirstOrDefault();
 			if (usr.getUserId() != null) {
 				if (usr.getUserId() != null) {

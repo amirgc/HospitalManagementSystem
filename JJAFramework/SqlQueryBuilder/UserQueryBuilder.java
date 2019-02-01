@@ -1,7 +1,5 @@
-package ConcreteBuilder;
+package SqlQueryBuilder;
 
-import SqlQueryBuilder.Query;
-import SqlQueryBuilder.QueryBuilder;
 import entities.User;
 
 public class UserQueryBuilder implements QueryBuilder {
@@ -39,4 +37,7 @@ public class UserQueryBuilder implements QueryBuilder {
 		return query;
 	}
 
+	public static String getSelectQueryByUserNameAndPassword(String UserName, String Password) {
+		return "Select * from Users where userId ='" + UserName + "' and passWord='" + Password + "'";
+	}
 }
