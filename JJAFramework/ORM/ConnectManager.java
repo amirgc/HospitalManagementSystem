@@ -4,12 +4,22 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectManagerFactory {
-	private static Connection connection = null;
-	// private static final String DB_URL =
-	// "jdbc:ucanaccess:Server=myServerAddress;Port=3306;Database=sql3276627;Uid=sql3276627;Pwd=zQZRhxc9tp;";
+public class ConnectManager {
+	private ConnectManager() {
+	}
 
-	public static Connection getMsAccessConnect() {
+	private static Connection msAccessConnection = null;
+	private static Connection mySqlConnection = null;
+
+	public static Connection getConnectionByType(String type) {
+		if (type.equals("MSAccess")) {
+			return getMsAccessConnection();
+		}
+		return getMySqlConnection();
+
+	}
+
+	private static Connection getMsAccessConnection() {
 		try {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
@@ -19,14 +29,15 @@ public class ConnectManagerFactory {
 		}
 
 		try {
-			connection = DriverManager.getConnection("jdbc:ucanaccess://src/MsAccessDb/LibraryManagementSystem.accdb");
+			msAccessConnection = DriverManager
+					.getConnection("jdbc:ucanaccess://src/MsAccessDb/LibraryManagementSystem.accdb");
 		} catch (SQLException e) {
 
 		}
-		return connection;
+		return msAccessConnection;
 	}
 
-	public static Connection getMySqlConnect() {
+	private static Connection getMySqlConnection() {
 
 		String url = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3276627";
 		String user = "sql3276627";
@@ -41,12 +52,12 @@ public class ConnectManagerFactory {
 		}
 
 		try {
-			connection = DriverManager.getConnection(url, user, password);
+			mySqlConnection = DriverManager.getConnection(url, user, password);
 			// DriverManager.getConnection("jdbc:mysql://Server=sql3.freemysqlhosting.net;Port=3306;Database=sql3276627;Uid=sql3276627;Pwd=zQZRhxc9tp;");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Exception on making connection");
 		}
-		return connection;
+		return mySqlConnection;
 	}
 }

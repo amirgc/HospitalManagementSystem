@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import Rules.RuleException;
 import Rules.RuleSet;
 import bal.UserManagerBAL;
-import entities.Book;
 import entities.User;
 import helper.RuleSetFactory;
 import javafx.collections.FXCollections;
@@ -38,7 +37,7 @@ public class UserManagerController implements Initializable {
 	public ComboBox<Integer> cmbBoxMaxCheckOutLength;
 
 	@FXML
-	private TableView<Book> table;
+	private TableView<User> table;
 
 	public void addUser() {
 		UserManagerBAL userBal = new UserManagerBAL();
