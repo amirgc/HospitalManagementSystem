@@ -13,7 +13,7 @@ public class UserDAO extends DbContext {
 	public UserDAO(User user) {
 		super(user);
 		this.user = user;
-		QueryDirector qd = new QueryDirector(new UserQueryBuilder());
+		QueryDirector qd = new QueryDirector(new UserQueryBuilder(user));
 		qd.constructQuery();
 		super.setQuery(qd.getQuery());
 	}

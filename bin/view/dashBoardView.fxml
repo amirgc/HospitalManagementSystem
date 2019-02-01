@@ -16,9 +16,7 @@
 							<content>
 								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="606.0" prefWidth="312.0">
 									<children>
-										<Hyperlink layoutX="14.0" layoutY="14.0" onAction="#addNewMember" style="-: ;" text="View/Add/Edit LibraryMember" />
-										<Hyperlink fx:id="hp1" layoutX="14.0" layoutY="50.0" onAction="#addBook" prefHeight="29.0" prefWidth="150.0" text="View/Add New Book" />
-										<Hyperlink layoutX="14.0" layoutY="79.0" onAction="#addCopyOfBook" text="View/Add Copy" />
+                              <Hyperlink layoutX="16.0" layoutY="20.0" onAction="#viewUserManager" text="UserManger" />
 									</children>
 								</AnchorPane>
 							</content>
@@ -30,11 +28,7 @@
 						</TitledPane>
 						<TitledPane fx:id="pane3" animated="false" prefHeight="650.0" prefWidth="202.0" styleClass="primary" text="Transaction">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="183.0" style="-fx-border-style: dotted  dashed  dashed  dashed; -fx-border-color: white; -fx-border-width: 2;">
-									<children>
-										<Hyperlink layoutX="14.0" layoutY="8.0" onAction="#checkOutBook" text="Checkout Book" />
-									</children>
-								</AnchorPane>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="183.0" style="-fx-border-style: dotted  dashed  dashed  dashed; -fx-border-color: white; -fx-border-width: 2;" />
 							</content>
 						</TitledPane>
 					</panes>

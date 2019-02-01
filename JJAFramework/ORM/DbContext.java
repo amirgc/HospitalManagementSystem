@@ -57,7 +57,7 @@ public class DbContext implements DbSet {
 	}
 
 	@Override
-	public boolean Add(Object o) {
+	public boolean Add() {
 		this.sql = query.getInsertQuery();
 		try {
 			da.write(this);
@@ -69,7 +69,7 @@ public class DbContext implements DbSet {
 	}
 
 	@Override
-	public boolean Update(Object o) {
+	public boolean Update() {
 		this.sql = query.getUpdateQuery();
 		try {
 			da.write(this);
@@ -81,7 +81,7 @@ public class DbContext implements DbSet {
 	}
 
 	@Override
-	public boolean Remove(Object o) {
+	public boolean Remove() {
 		this.sql = query.getDeleteQuery();
 		try {
 			da.write(this);
