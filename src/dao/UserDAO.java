@@ -19,7 +19,7 @@ public class UserDAO extends DbContext {
 	}
 
 	public User SelectFirstOrDefault() {
-		String sql = "Select * from Users where userId ='" + user.getUserId() + "' and password='" + user.getPassWord()
+		String sql = "Select * from Users where userId ='" + user.getUserId() + "' and passWord='" + user.getPassWord()
 				+ "'";
 		super.setSql(sql);
 		List<User> users = (List<User>) super.CustomReadAction();
