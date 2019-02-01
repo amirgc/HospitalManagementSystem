@@ -43,6 +43,13 @@ public class DashBoardController implements Initializable {
 	@FXML
 	private Button btnLogin;
 
+	public void viewUserManager() throws IOException
+	{
+		URL url1 = new File("src/view/userManager.fxml").toURL();
+		Parent root1 = FXMLLoader.load(url1);
+		pane.setCenter(root1);
+
+	}
 	public void addNewMember() throws IOException {
 
 		URL url1 = new File("src/view/addNewMember.fxml").toURL();

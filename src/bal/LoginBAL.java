@@ -22,6 +22,6 @@ public class LoginBAL {
 	public void AddUser(User user) {
 		// AddUser(new User(userId, "Shyam", password, "DOCTOR"));
 		UserDAO usrDao = new UserDAO(user);
-		usrDao.Add(user);
+		usrDao.Add();
 	}
 }

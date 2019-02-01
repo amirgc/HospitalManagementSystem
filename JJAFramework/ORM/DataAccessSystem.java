@@ -19,12 +19,18 @@ public class DataAccessSystem implements DataAccess {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			dc.unpackResultSet(rs);
-		} finally {
+		}
+		catch(Exception e)
+		{
+			con.close();
+			System.out.println(e.getMessage());
+		}
+		finally {
 			if (con != null) {
 				try {
 					con.close();
 				} catch (Exception e) {
-
+					System.out.println(e.getMessage());
 				}
 			}
 		}

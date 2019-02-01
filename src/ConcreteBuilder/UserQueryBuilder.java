@@ -15,7 +15,7 @@ public class UserQueryBuilder implements QueryBuilder {
 
 	@Override
 	public void buildSelectQuery() {
-		query.setSelectquery("Select * from users");
+		query.setSelectquery("Select * from Users");
 	}
 
 	@Override
@@ -26,12 +26,12 @@ public class UserQueryBuilder implements QueryBuilder {
 
 	@Override
 	public void buildUpdateQuery() {
-		query.setSelectquery("Select * From Users");
+		query.setUpdateQuery("Select * From Users");
 	}
 
 	@Override
 	public void buildDeleteQuery() {
-		query.setSelectquery("Delete From Users Where  ");
+		query.setDeleteQuery("Delete From Users Where  ");
 	}
 
 	@Override

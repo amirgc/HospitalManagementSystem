@@ -7,6 +7,7 @@ import controller.AddNewMemberController;
 import controller.BookController;
 import controller.BookCopyController;
 import controller.CheckOutController;
+import controller.UserManagerController;
 
 final public class RuleSetFactory {
 	private RuleSetFactory(){}
@@ -16,6 +17,7 @@ final public class RuleSetFactory {
 		map.put(BookController.class, new BookControllerRuleSet());
 		map.put(BookCopyController.class, new BookCopyControllerRuleSet());
 		map.put(CheckOutController.class, new CheckOutControllerRuleSet());
+		map.put(UserManagerController.class, new UserManagerControllerRuleSet());
 	}
 	
 	public static RuleSet getRuleSet(Object c) {
