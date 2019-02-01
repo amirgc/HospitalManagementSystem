@@ -1,18 +1,14 @@
 package ORM;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Parameter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import SqlQueryBuilder.Query;
-import Utils.Converter;
 import entities.Entity;
 
-public class DbContext implements DbSet {
+public abstract class DbContext implements DbSet {
 	private String sql;
 	private Query query;
 	private List<Entity> lst;
@@ -49,10 +45,8 @@ public class DbContext implements DbSet {
 	public void unpackResultSet(ResultSet rs) throws SQLException {
 		while (rs.next()) {
 			try {
-				// lst.add(instantiate(rs, entity.getClass().getName()));
 				lst.add(EntityFactory.getEntityFactory().createEntity(rs, entity.getClass().getName(), entity));
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

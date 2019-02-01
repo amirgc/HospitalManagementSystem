@@ -1,4 +1,4 @@
-package ConcreteBuilder;
+package SqlQueryBuilder;
 
 import java.lang.reflect.Field;
 

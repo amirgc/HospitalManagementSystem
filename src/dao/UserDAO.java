@@ -2,9 +2,9 @@ package dao;
 
 import java.util.List;
 
-import ConcreteBuilder.UserQueryBuilder;
 import ORM.DbContext;
 import SqlQueryBuilder.QueryDirector;
+import SqlQueryBuilder.UserQueryBuilder;
 import entities.User;
 
 public class UserDAO extends DbContext {

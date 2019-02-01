@@ -1,7 +1,5 @@
-package ConcreteBuilder;
+package SqlQueryBuilder;
 
-import SqlQueryBuilder.Query;
-import SqlQueryBuilder.QueryBuilder;
 import entities.User;
 
 public class UserQueryBuilder implements QueryBuilder {

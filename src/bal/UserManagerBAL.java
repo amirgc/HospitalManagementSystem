@@ -8,6 +8,7 @@ import entities.User;
 
 public class UserManagerBAL {
 
+	@SuppressWarnings("unchecked")
 	public List<User> getListOfUser() {
 		UserDAO dao = new UserDAO(new User("", "", "", ""));
 		return (List<User>) dao.Select();
