@@ -61,7 +61,7 @@ public class LoginController {
 		stage.setScene(scene);
 		URL url1 = new File("src/view/bootstrap3.css").toURL();
 		scene.getStylesheets().add(url1.toExternalForm());
-		stage.setTitle("Library Management System");
+		stage.setTitle("Hospital Management System");
 		stage.setMaximized(true);
 		stage.show();
 

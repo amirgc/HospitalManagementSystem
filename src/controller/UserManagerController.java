@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import Rules.RuleException;
 import Rules.RuleSet;
-import bal.BookBAL;
 import bal.UserManagerBAL;
 import entities.Book;
 import entities.User;

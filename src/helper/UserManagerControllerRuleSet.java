@@ -2,7 +2,6 @@ package helper;
 
 import Rules.RuleException;
 import Rules.RuleSet;
-import controller.BookController;
 import controller.UserManagerController;
 
 public class UserManagerControllerRuleSet implements RuleSet{
