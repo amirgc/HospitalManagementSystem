@@ -43,35 +43,11 @@ public class DashBoardController implements Initializable {
 	@FXML
 	private Button btnLogin;
 
-	public void addNewMember() throws IOException {
-
-		URL url1 = new File("src/view/addNewMember.fxml").toURL();
+	public void viewUserManager() throws IOException
+	{
+		URL url1 = new File("src/view/userManager.fxml").toURL();
 		Parent root1 = FXMLLoader.load(url1);
 		pane.setCenter(root1);
-
-	}
-
-	public void addBook() throws IOException {
-
-		URL url2 = new File("src/view/addABook.fxml").toURL();
-		Parent root2 = FXMLLoader.load(url2);
-		pane.setCenter(root2);
-
-	}
-
-	public void checkOutBook() throws IOException {
-
-		URL url3 = new File("src/view/addCheckOutForm.fxml").toURL();
-		Parent root3 = FXMLLoader.load(url3);
-		pane.setCenter(root3);
-
-	}
-
-	public void addCopyOfBook() throws IOException {
-
-		URL url4 = new File("src/view/addACopy.fxml").toURL();
-		Parent root4 = FXMLLoader.load(url4);
-		pane.setCenter(root4);
 
 	}
 
@@ -114,14 +90,14 @@ public class DashBoardController implements Initializable {
 			if (authLevel.equals("LIBRARIAN")) {
 				pane1.setVisible(false);
 				accord.setExpandedPane(pane3);
-				checkOutBook();
+				viewUserManager();
 			} else if (authLevel.equals("ADMIN")) {
 				pane3.setVisible(false);
 				accord.setExpandedPane(pane1);
-				addNewMember();
+				viewUserManager();
 			} else {
 				accord.setExpandedPane(pane1);
-				addNewMember();
+				viewUserManager();
 			}
 
 		} catch (Exception e) {

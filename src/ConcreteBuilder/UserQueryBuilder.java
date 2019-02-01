@@ -6,29 +6,32 @@ import entities.User;
 
 public class UserQueryBuilder implements QueryBuilder {
 	private Query query;
+	private QueryHelper qh;
 
-	public UserQueryBuilder()
-	{
+	public UserQueryBuilder(User user) {
 		query = new Query();
+		qh = new QueryHelper(user);
 	}
+
 	@Override
 	public void buildSelectQuery() {
-		query.setSelectquery("Select * from users");
+		query.setSelectquery("Select * from Users");
 	}
 
 	@Override
 	public void buildInsertQuery() {
-		query.setSelectquery("Select * from users");
+		String insertQuery = "Insert Into Users " + qh.getInsertQueryString();
+		query.setInsertQuery(insertQuery);
 	}
 
 	@Override
 	public void buildUpdateQuery() {
-		query.setSelectquery("Select * from users");
+		query.setUpdateQuery("Select * From Users");
 	}
 
 	@Override
 	public void buildDeleteQuery() {
-		query.setSelectquery("Select * from users");
+		query.setDeleteQuery("Delete From Users Where  ");
 	}
 
 	@Override
