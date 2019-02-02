@@ -24,7 +24,7 @@ public class UserQueryBuilder implements QueryBuilder {
 
 	@Override
 	public void buildUpdateQuery() {
-		query.setUpdateQuery("Select * From Users");
+		query.setUpdateQuery("Update Users Set ");
 	}
 
 	@Override

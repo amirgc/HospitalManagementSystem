@@ -8,7 +8,6 @@ public class QueryHelper {
 
 	private Entity entity;
 	private Field[] fs;
-	private String queryPart;
 
 	public QueryHelper(Entity entity) {
 		this.entity = entity;
@@ -16,7 +15,7 @@ public class QueryHelper {
 	}
 
 	public String getInsertQueryString() {
-		queryPart = "(";
+		String queryPart = "(";
 		for (Field field : fs) {
 			queryPart += field.getName() + ",";
 		}
@@ -41,7 +40,23 @@ public class QueryHelper {
 	}
 
 	public String getUpdateQueryString() {
-		return "";
+		String queryPart = "";
+		Object value = null;
+		for (Field field : fs) {
+			field.setAccessible(true);
+			queryPart += field.getName() + "=";
+			try {
+				queryPart += value = field.get(entity);
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+			queryPart += "'" + value.toString() + "',";
+		}
+		queryPart = queryPart.substring(0, queryPart.length() - 1);
+		queryPart += ")";
+		return queryPart;
 	}
 
 	public String getDeleteQueryString() {
