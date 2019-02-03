@@ -18,6 +18,7 @@ public class UserDAO extends DbContext {
 		super.setQuery(qd.getQuery());
 	}
 
+	@Override
 	public User SelectFirstOrDefault() {
 		String sql = "Select * from user where userId ='" + user.getUserId() + "' and passWord='" + user.getPassWord()
 				+ "'";

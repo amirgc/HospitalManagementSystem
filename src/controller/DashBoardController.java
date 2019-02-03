@@ -43,8 +43,7 @@ public class DashBoardController implements Initializable {
 	@FXML
 	private Button btnLogin;
 
-	public void viewUserManager() throws IOException
-	{
+	public void viewUserManager() throws IOException {
 		URL url1 = new File("src/view/userManager.fxml").toURL();
 		Parent root1 = FXMLLoader.load(url1);
 		pane.setCenter(root1);
@@ -83,25 +82,30 @@ public class DashBoardController implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {
 
 		String authLevel = LoggedInDetails.getAuthLevel();
-		//System.out.println(LoggedInDetails.getUserName());
+		// System.out.println(LoggedInDetails.getUserName());
 		lblWelcomeMsg.setText(LoggedInDetails.getUserName());
-
 		try {
-			if (authLevel.equals("LIBRARIAN")) {
-				pane1.setVisible(false);
-				accord.setExpandedPane(pane3);
-				viewUserManager();
-			} else if (authLevel.equals("ADMIN")) {
-				pane3.setVisible(false);
-				accord.setExpandedPane(pane1);
-				viewUserManager();
-			} else {
-				accord.setExpandedPane(pane1);
-				viewUserManager();
-			}
-
-		} catch (Exception e) {
-
+			viewUserManager();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+//		try {
+//			if (authLevel.equals("LIBRARIAN")) {
+//				pane1.setVisible(false);
+//				accord.setExpandedPane(pane3);
+//				viewUserManager();
+//			} else if (authLevel.equals("ADMIN")) {
+//				pane3.setVisible(false);
+//				accord.setExpandedPane(pane1);
+//				viewUserManager();
+//			} else {
+//				accord.setExpandedPane(pane1);
+//				viewUserManager();
+//			}
+//
+//		} catch (Exception e) {
+//
+//		}
 	}
 }

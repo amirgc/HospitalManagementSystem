@@ -8,14 +8,14 @@ import java.util.List;
 import SqlQueryBuilder.Query;
 import entities.Entity;
 
-public abstract class DbContext implements DbSet {
+public abstract class DbContext extends DbSet {
 	private String sql;
 	private Query query;
 	private List<Entity> lst;
 	private Entity entity;
-	DataAccess da = DataAccessFactory.getDataAccess();
 
 	public DbContext(Entity entity) {
+		super(DataAccessFactory.getDataAccess());
 		this.entity = entity;
 		lst = new ArrayList<Entity>();
 	}
@@ -36,7 +36,7 @@ public abstract class DbContext implements DbSet {
 	public List<?> Select() {
 		try {
 			this.sql = query.getSelectquery();
-			da.read(this);
+			dataAccess.read(this);
 		} catch (SQLException e) {
 		}
 		return lst;
@@ -56,7 +56,7 @@ public abstract class DbContext implements DbSet {
 	public boolean Add() {
 		this.sql = query.getInsertQuery();
 		try {
-			da.write(this);
+			dataAccess.write(this);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -68,7 +68,7 @@ public abstract class DbContext implements DbSet {
 	public boolean Update() {
 		this.sql = query.getUpdateQuery();
 		try {
-			da.write(this);
+			dataAccess.write(this);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -80,7 +80,7 @@ public abstract class DbContext implements DbSet {
 	public boolean Remove() {
 		this.sql = query.getDeleteQuery();
 		try {
-			da.write(this);
+			dataAccess.write(this);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -90,7 +90,7 @@ public abstract class DbContext implements DbSet {
 
 	public List<?> CustomReadAction() {
 		try {
-			da.read(this);
+			dataAccess.read(this);
 		} catch (SQLException e) {
 		}
 		return lst;
@@ -98,7 +98,7 @@ public abstract class DbContext implements DbSet {
 
 	public boolean CustomWriteAction(Object o) {
 		try {
-			da.write(this);
+			dataAccess.write(this);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -106,4 +106,5 @@ public abstract class DbContext implements DbSet {
 		return true;
 	}
 
+	public abstract Entity SelectFirstOrDefault();
 }
