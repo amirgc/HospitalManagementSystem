@@ -16,6 +16,6 @@ public class UserManagerBAL {
 
 	public boolean AddUser(String userId, String userName, String passWord, String authLevel) {
 		UserDAO dao = new UserDAO(EntityFactory.createUser(userId, userName, passWord, authLevel));
-		return dao.Update();
+		return dao.Add();
 	}
 }

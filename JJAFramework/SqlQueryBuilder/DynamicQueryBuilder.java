@@ -25,7 +25,7 @@ public class DynamicQueryBuilder implements QueryBuilder {
 	@Override
 	public void buildInsertQuery() {
 
-		String insertQuery = "Insert Into" + this.tableName + " (";
+		String insertQuery = "Insert Into " + this.tableName + " (";
 		for (Field field : fs) {
 			insertQuery += field.getName() + ",";
 		}
@@ -84,7 +84,17 @@ public class DynamicQueryBuilder implements QueryBuilder {
 
 	@Override
 	public void buildDeleteQuery() {
-		query.setDeleteQuery("Delete From " + this.tableName + " Where  ");
+		Object entityId = null;
+		try {
+			entityId = fs[0].get(entity);
+		} catch (IllegalArgumentException e1) {
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			e1.printStackTrace();
+		}
+		String deleteQuery = "Delete From " + this.tableName;
+		deleteQuery += " Where " + fs[0].getName() + "='" + entityId + "'";
+		query.setDeleteQuery(deleteQuery);
 	}
 
 	@Override
