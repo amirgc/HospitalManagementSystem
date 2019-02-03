@@ -3,8 +3,8 @@ package dao;
 import java.util.List;
 
 import ORM.DbContext;
+import SqlQueryBuilder.DynamicQueryBuilder;
 import SqlQueryBuilder.QueryDirector;
-import SqlQueryBuilder.UserQueryBuilder;
 import entities.User;
 
 public class UserDAO extends DbContext {
@@ -13,13 +13,15 @@ public class UserDAO extends DbContext {
 	public UserDAO(User user) {
 		super(user);
 		this.user = user;
-		QueryDirector qd = new QueryDirector(new UserQueryBuilder(user));
+		QueryDirector qd = new QueryDirector(new DynamicQueryBuilder(user));
 		qd.constructQuery();
 		super.setQuery(qd.getQuery());
 	}
 
 	public User SelectFirstOrDefault() {
-		super.setSql(UserQueryBuilder.getSelectQueryByUserNameAndPassword(user.getUserId(), user.getPassWord()));
+		String sql = "Select * from user where userId ='" + user.getUserId() + "' and passWord='" + user.getPassWord()
+				+ "'";
+		super.setSql(sql);
 		List<User> users = (List<User>) super.CustomReadAction();
 		return users.get(0);
 	}
