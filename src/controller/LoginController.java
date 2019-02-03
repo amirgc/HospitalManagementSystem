@@ -37,7 +37,7 @@ public class LoginController {
 //			resultLabel.setText("Please provide User Id And Password");
 //			return;
 //		}
-		//User user = l.IsAuthentiCated(userID, password);
+//		User user = l.IsAuthentiCated(userID, password);
 		User user = l.IsAuthentiCated("986677", "test1234");
 		if (user == null) {
 			resultLabel.setText("User Not Found");

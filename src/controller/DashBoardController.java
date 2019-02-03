@@ -88,15 +88,15 @@ public class DashBoardController implements Initializable {
 
 		try {
 			if (authLevel.equals("LIBRARIAN")) {
-				pane1.setVisible(false);
-				accord.setExpandedPane(pane3);
+				//pane1.setVisible(false);
+				//accord.setExpandedPane(pane3);
 				viewUserManager();
 			} else if (authLevel.equals("ADMIN")) {
-				pane3.setVisible(false);
-				accord.setExpandedPane(pane1);
+				//pane3.setVisible(false);
+				//accord.setExpandedPane(pane1);
 				viewUserManager();
 			} else {
-				accord.setExpandedPane(pane1);
+				//accord.setExpandedPane(pane1);
 				viewUserManager();
 			}
 
