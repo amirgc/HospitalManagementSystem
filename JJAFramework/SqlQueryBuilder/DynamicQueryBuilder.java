@@ -18,8 +18,8 @@ public class DynamicQueryBuilder implements QueryBuilder {
 
 	@Override
 	public void buildSelectQuery() {
-		System.out.println(this.tableName);
-		query.setSelectquery("SELECT * FROM user ");
+		// System.out.println(this.tableName);
+		query.setSelectquery("SELECT * FROM  " + this.tableName);
 	}
 
 	@Override
@@ -52,14 +52,23 @@ public class DynamicQueryBuilder implements QueryBuilder {
 
 	@Override
 	public void buildUpdateQuery() {
-		
-		String upadteQuery = "Update " + this.tableName + " Set ";		
+
+		Object entityId = null;
+		try {
+			entityId = fs[0].get(entity);
+		} catch (IllegalArgumentException e1) {
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			e1.printStackTrace();
+		}
+
+		String upadteQuery = "Update " + this.tableName + " Set ";
 		Object value = null;
 		for (Field field : fs) {
 			field.setAccessible(true);
-			upadteQuery += field.getName() + "=";
+			upadteQuery += field.getName() + " = ";
 			try {
-				upadteQuery += value = field.get(entity);
+				value = field.get(entity);
 			} catch (IllegalArgumentException e) {
 				e.printStackTrace();
 			} catch (IllegalAccessException e) {
@@ -68,8 +77,8 @@ public class DynamicQueryBuilder implements QueryBuilder {
 			upadteQuery += "'" + value.toString() + "',";
 		}
 		upadteQuery = upadteQuery.substring(0, upadteQuery.length() - 1);
-		upadteQuery += ")";
-		
+		upadteQuery += " Where " + fs[0].getName() + "='" + entityId + "'";
+
 		query.setUpdateQuery(upadteQuery);
 	}
 

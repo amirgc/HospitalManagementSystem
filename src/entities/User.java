@@ -11,9 +11,9 @@ public class User implements Entity{
 		this.userId=userId;
 		this.userName=userName;
 		this.passWord=passWord;
-		this.setAuthLevel(authLevel);
-				
+		this.setAuthLevel(authLevel);				
 	}
+	
 	public String getUserId() {
 		return userId;
 	}
