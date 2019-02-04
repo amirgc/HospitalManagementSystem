@@ -8,20 +8,21 @@ public class Service implements BillingItem {
 	
 	private IServiceCharge type;
 	private Charge charge;
+	private double price;
 	
 	
-	private Service(Charge charge) {
-		this.charge = charge;
+	public Service(double price) {
+		this.price = price;
 	}
 	
-	Service(IServiceCharge patientType) {
+	private Service(IServiceCharge patientType) {
 		this.type = patientType;
 	}
 
 	public double getTotalPrice() {
-		
-		return this.type.getServiceCharge(charge);
+		return this.price;
 	}
+	
 	@Override
 	public void accept(Visitor visitor) {
 		visitor.visit(this);

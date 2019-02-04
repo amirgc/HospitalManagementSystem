@@ -6,7 +6,7 @@ import Billing.Visitor;
 public class Miscellaneous implements BillingItem {
 
 	public double getPrice() {
-		return 0;
+		return 17.6;
 	}
 	@Override
 	public void accept(Visitor visitor) {

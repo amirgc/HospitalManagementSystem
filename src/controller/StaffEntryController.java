@@ -3,6 +3,7 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import bal.BAL;
 import bal.PatientManagerBAL;
 import bal.StaffManagerBAL;
 import helper.Util;
@@ -23,7 +24,7 @@ public class StaffEntryController implements Initializable {
 	
 	private String dob_pattern = "/^\\d{2}\\/\\d{2}\\/\\d{4}$/";
 
-	private int selectedGender, selectedDesignation;
+	private String selectedGender, selectedDesignation;
 	public void buttonAddStaff() {
 		
 		boolean cancel = false;
@@ -59,10 +60,10 @@ public class StaffEntryController implements Initializable {
 	}
 	
 	
-	private void addStaff(String name, String dob, int gender, String address, String phone, int designation) {
+	private void addStaff(String name, String dob, String gender, String address, String phone, String designation) {
 		
-		StaffManagerBAL staffBAL = new StaffManagerBAL();
-		if(staffBAL.AddStaff(name, dob, gender, address, phone, designation)) {
+		BAL staffBAL = new StaffManagerBAL();
+		if(staffBAL.addData(name, dob, gender, address, phone, designation)) {
 			Util.showAlert("Staff successfully added.");
 			clearFields();
 		} else {
@@ -103,7 +104,7 @@ public class StaffEntryController implements Initializable {
         .addListener(new ChangeListener<Number>() {
           public void changed(ObservableValue ov, Number value, Number new_value) {
         	  //1=Male, 2=Female, 3=Other
-        	  selectedGender = new_value.intValue()+1;
+        	  selectedGender = String.valueOf(new_value.intValue()+1);
         	  
           }
         });
@@ -114,7 +115,7 @@ public class StaffEntryController implements Initializable {
         .addListener(new ChangeListener<Number>() {
           public void changed(ObservableValue ov, Number value, Number new_value) {
         	  //1=Lab, 2=Doctor, 3=General
-        	  selectedDesignation = new_value.intValue()+1;
+        	  selectedDesignation = String.valueOf(new_value.intValue()+1);
           }
         });
 		

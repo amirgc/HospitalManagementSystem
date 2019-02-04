@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import Rules.RuleException;
 import Rules.RuleSet;
+import bal.BAL;
 import bal.PatientManagerBAL;
 import bal.UserManagerBAL;
 import entities.Patient;
@@ -40,13 +41,13 @@ public class UserManagerController implements Initializable {
 	private int selectedGender, selectedBed, selectedDoctor;
 
 	public void btnAddPatient() {
-		PatientManagerBAL patientBAL = new PatientManagerBAL();
+		BAL patientBAL = new PatientManagerBAL();
 		try {
 			RuleSet rules = RuleSetFactory.getRuleSet(UserManagerController.this);
 			rules.applyRules(UserManagerController.this);
 			
 			if (selectedGender != 0 && selectedBed != 0 && selectedDoctor !=0) {
-				patientBAL.AddPatient(txtName.getText().trim().toString(), txtAge.getText().trim().toString(), txtWeight.getText().trim().toString(), String.valueOf(selectedGender), String.valueOf(selectedBed), String.valueOf(selectedDoctor), txtProblem.getText().trim().toString(), txtTreatment.getText().trim().toString(), txtMedicine.getText().trim().toString(), txtAddress.getText().trim().toString(), txtPhone.getText().trim().toString());
+				patientBAL.addData(txtName.getText().trim().toString(), txtAge.getText().trim().toString(), txtWeight.getText().trim().toString(), String.valueOf(selectedGender), String.valueOf(selectedBed), String.valueOf(selectedDoctor), txtProblem.getText().trim().toString(), txtTreatment.getText().trim().toString(), txtMedicine.getText().trim().toString(), txtAddress.getText().trim().toString(), txtPhone.getText().trim().toString());
 				clearFields();
 				LoadUsers();
 			} else {
@@ -127,7 +128,7 @@ public class UserManagerController implements Initializable {
 		PatientManagerBAL patientBal = new PatientManagerBAL();
 		tablePatient.getColumns().clear();
 
-		List<Patient> patients = patientBal.getListOfPatient();
+		List<Patient> patients = patientBal.getData();
 		tablePatient.setEditable(true);
 
 		TableColumn patientName = new TableColumn("Name");

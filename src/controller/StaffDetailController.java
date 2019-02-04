@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import bal.BAL;
 import bal.PatientManagerBAL;
 import bal.StaffManagerBAL;
 import entities.Patient;
@@ -25,8 +26,8 @@ public class StaffDetailController implements Initializable {
 		if (textName.getText().trim().toString().isEmpty()) {
 			Util.showAlert("Enter name of staff to view his/her information.");
 		} else {
-			StaffManagerBAL staffBal = new StaffManagerBAL();
-			List<Staff> staffList = staffBal.getListOfStaff();
+			BAL staffBal = new StaffManagerBAL();
+			List<Staff> staffList = (List<Staff>) staffBal.getData();
 			
 			for (Staff staff: staffList) {
 				

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import bal.BAL;
 import bal.PatientManagerBAL;
 import entities.Patient;
 import helper.Util;
@@ -23,14 +24,13 @@ public class PatientDetailsController implements Initializable {
 		if (textName.getText().trim().toString().isEmpty()) {
 			Util.showAlert("Enter patient name.");
 		} else {
-		PatientManagerBAL patientBal = new PatientManagerBAL();
-		List<Patient> patients = patientBal.getListOfPatient();
+		BAL patientBal = new PatientManagerBAL();
+		List<Patient> patients = (List<Patient>) patientBal.getData();
 		
 		for (Patient p: patients) {
 			if (textName.getText().trim().toLowerCase().toString().equalsIgnoreCase(p.getP_name())) {
 				labelName.setText(p.getP_name());
 				labelAge.setText(p.getP_age());
-				labelWeight.setText(p.getP_weight());
 				labelWeight.setText(p.getP_weight());
 				labelProblem.setText(p.getP_problem());
 				labelTreatment.setText(p.getP_treatment());
@@ -57,8 +57,6 @@ public class PatientDetailsController implements Initializable {
 				labelAddress.setText(p.getP_address());
 				labelPhone.setText(p.getP_phone());
 				
-			} else {
-				Util.showAlert("Couldn't find Patient.");
 			}
 		}
 		

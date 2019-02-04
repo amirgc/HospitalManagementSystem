@@ -65,7 +65,9 @@ public class DashBoardController implements Initializable {
 	}
 	
 	public void linkBilling() throws IOException {
-		
+		URL url1 = new File("src/view/BillingView.fxml").toURL();
+		Parent root1 = FXMLLoader.load(url1);
+		pane.setCenter(root1);
 	}
 	
 	public void linkStaffInformation() throws IOException {

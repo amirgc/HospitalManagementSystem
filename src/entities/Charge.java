@@ -1,41 +1,43 @@
 package entities;
 
-public class Charge {
+public class Charge implements Entity {
 
-	private double bedCharge = 0.0;
-	private double medicineCharge = 0.0;
-	private double doctorCharge = 0.0;
-	private double labCharge = 0.0;
-	private double ambulanceCharge = 0.0;
-	public double getBedCharge() {
-		return bedCharge;
+	
+	private String patientId;
+	
+	private String serviceType;
+	
+	private double price;
+	
+	public Charge(String patientId, String serviceType, double price) {
+		this.patientId = patientId;
+		this.serviceType = serviceType;
+		this.price = price;
+		
 	}
-	public void setBedCharge(double bedCharge) {
-		this.bedCharge = bedCharge;
+
+	public String getPatientId() {
+		return patientId;
 	}
-	public double getMedicineCharge() {
-		return medicineCharge;
+
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
 	}
-	public void setMedicineCharge(double medicineCharge) {
-		this.medicineCharge = medicineCharge;
+
+	public String getServiceType() {
+		return serviceType;
 	}
-	public double getDoctorCharge() {
-		return doctorCharge;
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
 	}
-	public void setDoctorCharge(double doctorCharge) {
-		this.doctorCharge = doctorCharge;
+
+	public double getPrice() {
+		return price;
 	}
-	public double getLabCharge() {
-		return labCharge;
-	}
-	public void setLabCharge(double labCharge) {
-		this.labCharge = labCharge;
-	}
-	public double getAmbulanceCharge() {
-		return ambulanceCharge;
-	}
-	public void setAmbulanceCharge(double ambulanceCharge) {
-		this.ambulanceCharge = ambulanceCharge;
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	

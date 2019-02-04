@@ -1,5 +1,6 @@
 package helper;
 
+import entities.Charge;
 import entities.Patient;
 import entities.Staff;
 import entities.User;
@@ -26,6 +27,10 @@ public class SubjectCreator {
 	
 	public static Staff createStaff(String s_name, String s_dob, int s_gender, String s_address, String s_phone, int s_designation) {
 		return new Staff(s_name, s_dob, s_gender, s_address, s_phone, s_designation);
+	}
+	
+	public static Charge createCharge(String patientId, String serviceType, double price) {
+		return new Charge(patientId, serviceType, price);
 	}
 	
 }

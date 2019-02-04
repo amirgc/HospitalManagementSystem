@@ -4,6 +4,6 @@ import entities.Charge;
 
 public interface IServiceCharge {
 
-	public double getServiceCharge(Charge charge);
+	public double getServiceCharge();
 	
 }
