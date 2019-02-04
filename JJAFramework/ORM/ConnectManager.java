@@ -12,17 +12,43 @@ public class ConnectManager {
 	private static Connection mySqlConnection = null;
 
 	public static Connection getConnectionByType(String type) {
+		boolean isClosed = true;
 		if (type.equals("MSAccess")) {
-			return getMsAccessConnection();
+
+			if (msAccessConnection == null)
+				return getMsAccessConnection();
+
+			try {
+				isClosed = msAccessConnection.isClosed();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			if (isClosed)
+				return getMsAccessConnection();
+			else
+				return msAccessConnection;
 		}
-		return getMySqlConnection();
+
+		if (mySqlConnection == null) {
+			return getMySqlConnection();
+		}
+
+		try {
+			isClosed = mySqlConnection.isClosed();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		if (isClosed)
+			return getMySqlConnection();
+		else
+			return mySqlConnection;
 
 	}
 
 	private static Connection getMsAccessConnection() {
 		try {
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-
 		} catch (ClassNotFoundException cnfex) {
 			System.out.println("Problem in loading or " + "registering MS Access JDBC driver");
 			cnfex.printStackTrace();
