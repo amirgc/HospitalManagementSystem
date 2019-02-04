@@ -35,7 +35,7 @@ public class DashBoardController implements Initializable {
 	private Accordion accord;
 
 	@FXML
-	private TitledPane pane1, pane2, pane3;
+	private TitledPane pane1;
 
 	@FXML
 	private Label lblWelcomeMsg;
@@ -49,6 +49,27 @@ public class DashBoardController implements Initializable {
 		Parent root1 = FXMLLoader.load(url1);
 		pane.setCenter(root1);
 
+	}
+	
+	public void linkPatientDetails() throws IOException {
+		System.out.println("In link Details");
+		URL url1 = new File("src/view/patientDetailView.fxml").toURL();
+		Parent root1 = FXMLLoader.load(url1);
+		pane.setCenter(root1);
+	}
+	
+	public void linkStaffEntry() throws IOException {
+		URL url1 = new File("src/view/staffEntryView.fxml").toURL();
+		Parent root1 = FXMLLoader.load(url1);
+		pane.setCenter(root1);
+	}
+	
+	public void linkBilling() throws IOException {
+		
+	}
+	
+	public void linkStaffInformation() throws IOException {
+		
 	}
 
 	public void logOut() {
@@ -85,23 +106,28 @@ public class DashBoardController implements Initializable {
 		String authLevel = LoggedInDetails.getAuthLevel();
 		//System.out.println(LoggedInDetails.getUserName());
 		lblWelcomeMsg.setText(LoggedInDetails.getUserName());
-
 		try {
-			if (authLevel.equals("LIBRARIAN")) {
-				pane1.setVisible(false);
-				accord.setExpandedPane(pane3);
-				viewUserManager();
-			} else if (authLevel.equals("ADMIN")) {
-				pane3.setVisible(false);
-				accord.setExpandedPane(pane1);
-				viewUserManager();
-			} else {
-				accord.setExpandedPane(pane1);
-				viewUserManager();
-			}
-
-		} catch (Exception e) {
-
+			viewUserManager();
+			accord.setExpandedPane(pane1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+//		try {
+//			if (authLevel.equals("LIBRARIAN")) {
+//				pane1.setVisible(false);
+//				accord.setExpandedPane(pane3);
+//				viewUserManager();
+//			} else if (authLevel.equals("ADMIN")) {
+//				pane3.setVisible(false);
+//				accord.setExpandedPane(pane1);
+//				viewUserManager();
+//			} else {
+//				accord.setExpandedPane(pane1);
+//			}
+//
+//		} catch (Exception e) {
+//
+//		}
 	}
 }

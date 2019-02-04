@@ -18,7 +18,7 @@ public class DynamicQueryBuilder implements QueryBuilder {
 
 	@Override
 	public void buildSelectQuery() {
-		// System.out.println(this.tableName);
+		System.out.println(this.tableName);
 		query.setSelectquery("SELECT * FROM  " + this.tableName);
 	}
 

@@ -22,10 +22,10 @@
 								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="606.0" prefWidth="312.0">
 									<children>
                               <Hyperlink layoutX="8.0" layoutY="20.0" onAction="#viewUserManager" prefHeight="25.0" prefWidth="181.0" text="Patient Entry" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
-                              <Hyperlink layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="173.0" text="Patient Details" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
-                              <Hyperlink layoutX="18.0" layoutY="148.0" prefHeight="25.0" prefWidth="125.0" text="Staff Information" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
-                              <Hyperlink layoutX="28.0" layoutY="117.0" text="Billing" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
-                              <Hyperlink layoutX="18.0" layoutY="85.0" text="Staff Entry" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+                              <Hyperlink layoutX="14.0" layoutY="50.0" onAction="#linkPatientDetails" prefHeight="25.0" prefWidth="173.0" text="Patient Details" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+                              <Hyperlink layoutX="18.0" layoutY="148.0" onAction="#linkStaffInformation" prefHeight="25.0" prefWidth="125.0" text="Staff Information" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+                              <Hyperlink layoutX="28.0" layoutY="117.0" onAction="#linkBilling" text="Billing" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+                              <Hyperlink layoutX="18.0" layoutY="85.0" onAction="#linkStaffEntry" text="Staff Entry" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
 									</children>
 								</AnchorPane>
 							</content>
