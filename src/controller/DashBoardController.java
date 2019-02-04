@@ -69,7 +69,9 @@ public class DashBoardController implements Initializable {
 	}
 	
 	public void linkStaffInformation() throws IOException {
-		
+		URL url1 = new File("src/view/StaffDetailView.fxml").toURL();
+		Parent root1 = FXMLLoader.load(url1);
+		pane.setCenter(root1);
 	}
 
 	public void logOut() {

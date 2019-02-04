@@ -57,6 +57,8 @@ public class PatientDetailsController implements Initializable {
 				labelAddress.setText(p.getP_address());
 				labelPhone.setText(p.getP_phone());
 				
+			} else {
+				Util.showAlert("Couldn't find Patient.");
 			}
 		}
 		

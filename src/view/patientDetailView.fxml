@@ -19,7 +19,7 @@
             <Label layoutX="28.0" layoutY="203.0" text="Problem:" AnchorPane.leftAnchor="22.0" />
             <Label layoutX="32.0" layoutY="235.0" text="Treatment:" AnchorPane.leftAnchor="22.0" />
             <Label layoutX="26.0" layoutY="268.0" text="Medicine:" AnchorPane.leftAnchor="22.0" />
-            <Label layoutX="29.0" layoutY="300.0" text="Docotor:" AnchorPane.leftAnchor="22.0" />
+            <Label layoutX="29.0" layoutY="300.0" text="Doctor:" AnchorPane.leftAnchor="22.0" />
             <Label layoutX="21.0" layoutY="336.0" text="Assigned Bed:" AnchorPane.leftAnchor="21.0" />
             <Label layoutX="21.0" layoutY="373.0" text="Address:" AnchorPane.leftAnchor="21.0" />
             <Label layoutX="20.0" layoutY="412.0" text="Phone:" AnchorPane.leftAnchor="20.0" />

@@ -61,7 +61,7 @@ public abstract class DbContext extends DbSet {
 			e.printStackTrace();
 			return false;
 		}
-		return false;
+		return true;
 	}
 
 	@Override
